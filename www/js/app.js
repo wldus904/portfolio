@@ -22,6 +22,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
     controller: 'mainCtrl'
   })
 
+  .state('introduction', {
+    url: '/introduction',
+    templateUrl: 'introduction/introduction.html',
+    controller: 'introductionCtrl'
+  })
+
 
 
 
