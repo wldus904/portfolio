@@ -28,7 +28,23 @@ app.config(function($stateProvider, $urlRouterProvider) {
     controller: 'introductionCtrl'
   })
 
+  .state('spec', {
+    url: '/spec',
+    templateUrl: 'spec/spec.html',
+    controller: 'specCtrl'
+  })
 
+  .state('project', {
+    url: '/project',
+    templateUrl: 'project/project.html',
+    controller: 'projectCtrl'
+  })
+
+  .state('contact', {
+    url: '/contact',
+    templateUrl: 'contact/contact.html',
+    controller: 'contactCtrl'
+  })
 
 
 

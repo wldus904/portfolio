@@ -1,0 +1,37 @@
+.introduction {
+  text-align: center;
+}
+
+.introduction-bg-img {
+  background-color: rgba( 0, 0, 0, 0 );
+}
+
+.introduction .scroll {
+  height: 100%;
+  width: 100%;
+}
+
+.introduction .introduction-info {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  height: 30%;
+  top: 30%;
+  transform: translateY(-20%);
+}
+
+.introduction .introduction-info img {
+  height: 70%;
+  display: block;
+  margin: auto;
+  border: 1px solid green;
+}
+
+.introduction div {
+  margin: .3em;
+  font-weight: bold;
+}
+
+.introduction .introduction-status {
+  color: #A4A4A4;
+}

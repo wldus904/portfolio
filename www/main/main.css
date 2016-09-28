@@ -1,25 +1,49 @@
 @media (max-width:423px){
-  .main .main-btn {
+  .main .no-active-main-btn {
+    width : 200px;
+    height: 200px;
+    font-size: 2em;
     top: 5%;
     transform: translateY(-5%);
+  }
+  .main .active-main-btn {
+    width: 150px;
+    height: 50px;
+    font-size: 1em;
   }
 }
 
 @media (min-width:424px) and (max-width:831px){
-  .main .main-btn {
+  .main .no-active-main-btn {
+    width : 200px;
+    height: 200px;
+    font-size: 2em;
     top: 30%;
     transform: translateY(-30%);
+  }
+  .main .active-main-btn {
+    width: 100px;
+    height: 50px;
+    font-size: 1em;
   }
 }
 
 @media (min-width:832px){
-  .main .main-btn {
+  .main .no-active-main-btn {
+    width : 200px;
+    height: 200px;
+    font-size: 2em;
     top: 40%;
     transform: translateY(-40%);
   }
+  .main .active-main-btn {
+    width: 200px;
+    height: 100px;
+    font-size: 2em;
+  }
 }
 
-.bg-img{
+.main-bg-img{
   background-image: url("../img/background/main.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,6 +52,23 @@
 .main {
   background-color: rgba( 0, 0, 0, 0.5 );
   text-align: center;
+}
+
+.main-view {
+  height: 85%;
+  overflow: hidden;
+}
+
+.main .main-view.ng-enter, .main .main-view.ng-leave {
+  -webkit-transition:all 0.7s;
+  transition:all 0.7s;
+  position:absolute;
+  display:block;
+}
+
+.main .main-view .pane, .view {
+  height: 85%;
+  top: 9%;
 }
 
 .main .scroll {
@@ -40,15 +81,24 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: inline-block;
-  width : 200px;
-  height: 200px;
-  border-radius: 100px;
   text-align: center;
-  font-size: 2em;
   font-weight: bold;
   opacity: .7;
-  line-height: 7em;
   cursor: pointer;
+}
+
+.main .no-active-main-btn {
+  border-radius: 100px;
+  line-height: 7em;
+  transition: all 1s;
+}
+
+.main .active-main-btn {
+  border-radius: 50px;
+  line-height: 3.2em;
+  top: 0;
+  transform: translateY(0);
+  transition: all 1s;
 }
 
 .main .main-my-self {

@@ -1,9 +1,10 @@
-<ion-view view-title="메인" class="bg-img">
+<ion-view view-title="메인" class="main-bg-img">
   <ion-content class="padding main">
-    <div class="main-btn main-my-self" ng-click="goPage('introduction')">introduction</div>
-    <div class="main-btn main-my-spec" ng-click="goPage('spec')">spec</div>
-    <div class="main-btn main-my-project" ng-click="goPage('project')">project</div>
-    <div class="main-btn main-my-contact" ng-click="goPage('contact')">contact</div>
+    <div class="main-my-self main-btn" ng-class="btnStyle" ng-click="goPage('introduction')">introduction</div>
+    <div class="main-my-spec main-btn" ng-class="btnStyle" ng-click="goPage('spec')">spec</div>
+    <div class="main-my-project main-btn" ng-class="btnStyle" ng-click="goPage('project')">project</div>
+    <div class="main-my-contact main-btn" ng-class="btnStyle" ng-click="goPage('contact')">contact</div>
+    <div ng-include="currentPage.url" class="main-view"></div>
     <div class="footer">
       <div class="title">
         Ver 1.0.0 2016 - Park ji yeon All create.
