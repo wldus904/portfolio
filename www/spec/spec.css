@@ -1,0 +1,101 @@
+.spec {
+  text-align: center;
+}
+
+.spec-wrap {
+  height: 80%;
+  width: 80%;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  position: relative;
+  background-color: rgba( 255, 255, 255, .3 );
+  border-radius: 10px;
+}
+
+.spec-content {
+  height: 90%;
+  width: 90%;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  position: relative;
+  background-color: rgba( 255, 255, 255, .5 );
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.spec-content table {
+  width: 100%;
+  height: 100%;
+}
+
+.spec-content tr {
+  border: 1px solid #848484;
+}
+
+.spec-content td {
+  border: 1px solid #848484;
+  width: 33%;
+  color: #2E2E2E;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.spec-svg {
+  width: 10em;
+  height: 10em;
+}
+
+.spec-svg-path-bg {
+  stroke-width : 15;
+  stroke-miterlimit : 10;
+  fill : none;
+  opacity: 0.3;
+  stroke-dasharray: 320;
+}
+
+.low {
+  stroke : #FFEC94;
+  stroke-dashoffset: 220.4;
+}
+
+.middle {
+  stroke : #E0FB97;
+  stroke-dashoffset: 108.8;
+}
+
+.high {
+  stroke : #66CCFF;
+  stroke-dashoffset: 0;
+}
+
+.spec-svg-value {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.spec-fill-low {
+  fill: #E86850;
+}
+
+.spec-fill-middle {
+  fill: #177F75;
+}
+
+.spec-fill-high {
+  fill: #003366;
+}
+
+.spec-svg-path {
+  stroke : #9BD7D5;
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  animation-fill-mode: forwards;
+  transition: stroke-dashoffset 2s, stroke 2s;
+  transition-delay: 1s;
+  stroke-width : 15;
+  stroke-miterlimit : 10;
+  stroke-linecap : round;
+  fill : none;
+}

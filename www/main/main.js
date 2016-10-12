@@ -1,11 +1,5 @@
 mainCtrl = function($scope, $state, $timeout) {
   $scope.btnStyle="no-active-main-btn";
-  $scope.page = {
-    introduction : "introduction/introduction.html",
-    spec : "spec/spec.html",
-    project : "project/project.html",
-    contact : "contact/contact.html",
-  }
   $scope.currentPage = {
     page: "",
     url: ""
@@ -16,6 +10,7 @@ mainCtrl = function($scope, $state, $timeout) {
       $scope.btnStyle = "no-active-main-btn";
       $scope.currentPage.page = "";
       $scope.currentPage.url = "";
+      $scope.ctrl = "";
     }else{
       $scope.btnStyle = "active-main-btn";
       $scope.currentPage.page = page;

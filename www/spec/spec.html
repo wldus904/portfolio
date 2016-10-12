@@ -1,1 +1,23 @@
-<div>spec</div>
+<ion-view view-title="소개" class="introduction-bg-img" ng-controller="specCtrl">
+  <ion-content class="padding spec">
+    <div class="spec-wrap">
+      <div class="spec-content">
+        <table>
+          <thead>
+            <tr>
+              <td></td><td>숙련도</td><td>구현 기능</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="data in specList">
+              <td>{{data.spec}}</td>
+              <td><spec-proficiency value="data.proficiency" value-id="data.spec"></spec-proficiency></td>
+              <td>{{data.skill}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
