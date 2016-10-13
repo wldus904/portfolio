@@ -5,14 +5,16 @@
         <table>
           <thead>
             <tr>
-              <td></td><td>숙련도</td><td>구현 기능</td>
+              <td></td><td>숙련도</td><td>설명 요약</td>
             </tr>
           </thead>
           <tbody>
             <tr ng-repeat="data in specList">
               <td>{{data.spec}}</td>
               <td><spec-proficiency value="data.proficiency" value-id="data.spec"></spec-proficiency></td>
-              <td>{{data.skill}}</td>
+              <td>
+                <div ng-repeat="skillData in data.skill">{{skillData}}</div>
+              </td>
             </tr>
           </tbody>
         </table>
