@@ -43,8 +43,12 @@
   }
 }
 
+body {
+  height: 100%;
+  width: 100%;
+}
+
 .main-bg-img{
-  background-image: url("../img/background/main.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -52,6 +56,8 @@
 .main {
   background-color: rgba( 0, 0, 0, 0.5 );
   text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 .main-view {
@@ -106,7 +112,6 @@
   border: 3px solid #FFBF00;
 }
 .main .main-my-self:hover {
-  /*background-image: url("../img/background/me1.jpeg");*/
   color: #FF8000;
   border: 3px solid #FF8000;
 }
@@ -117,7 +122,6 @@
 }
 
 .main .main-my-spec:hover {
-  /*background-image: url("../img/background/me1.jpeg");*/
   color: #FF5D27;
   border: 3px solid #FF5D27;
 }
@@ -128,7 +132,6 @@
 }
 
 .main .main-my-project:hover {
-  /*background-image: url("../img/background/me1.jpeg");*/
   color: #71D071;
   border: 3px solid #71D071;
 }
@@ -139,24 +142,51 @@
 }
 
 .main .main-my-contact:hover {
-  /*background-image: url("../img/background/me1.jpeg");*/
   color: #227FD7;
   border: 3px solid #227FD7;
 }
 
-.main .footer {
+.main-footer {
   width: 100%;
-  height: 5%;
+  height: 20%;
   text-align: center;
-  background-color: rgba( 255, 255, 255, 0 );
-  border-radius: 10px;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
+  background-color: #3f3f3f;
 }
 
-.main .footer .title {
+.main-title {
   font-size: 1em;
   font-weight: bold;
   color: #fff;
+}
+
+.main-connect-box {
+  width: 100%;
+  height: 65%;
+}
+
+.main-connect {
+  display: inline-block;
+  width: 5.5em;
+  height: 5.5em;
+  border-radius: 8em;
+  overflow: hidden;
+  top: 10%;
+  transform: translateY(40%);
+  margin: 0 .5em;
+}
+
+.main-connect img {
+  width: 3.5em;
+  height: 3.5em;
+  position: relative;
+  top: 10%;
+  transform: translateY(10%);
+}
+
+.main-connect.kakao {
+  background-color: #F5E106;
+}
+
+.main-connect.mail {
+  background-color: #ECECE9;
 }
