@@ -183,10 +183,19 @@ body {
   transform: translateY(10%);
 }
 
+.main-connect div {
+  font-size: 3em;
+  line-height: 1.7em;
+}
+
 .main-connect.kakao {
   background-color: #F5E106;
 }
 
 .main-connect.mail {
   background-color: #ECECE9;
+}
+
+.main-connect.git {
+  background-color: #F3E2A9;
 }
