@@ -17,6 +17,10 @@ mainCtrl = function($scope, $state, $timeout) {
       $scope.currentPage.url = page+"/"+page+".html";
     }
   }
+
+  $scope.slideChanged = function(index) {
+    console.log("change : ", index);
+  }
 }
 
 app.controller('mainCtrl', mainCtrl);

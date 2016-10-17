@@ -5,19 +5,62 @@
     <div class="main-my-project main-btn" ng-class="btnStyle" ng-click="goPage('project')">project</div>
     <div class="main-my-contact main-btn" ng-class="btnStyle" ng-click="goPage('contact')">contact</div>
     <div ng-include="currentPage.url" class="main-view"></div>-->
+
+    <ion-slide-box does-continue = "true" auto-play = 'true' slide-interval = '4000' class="main-slide" on-slide-changed="slideChanged(index)">
+      <ion-slide>
+        <img src="img/main/kakao.png" style="height: 769px;"/>
+      </ion-slide>
+      <ion-slide>
+        <img src="img/main/gmail.png" style="height: 769px; width: 1025px;"/>
+      </ion-slide>
+      <ion-slide>
+        <img src="img/main/kakao.png" style="height: 769px;"/>
+      </ion-slide>
+      <ion-slide>
+        <img src="img/main/gmail.png" style="height: 769px;"/>
+      </ion-slide>
+    </ion-slide-box>
+
+    <menu-directive></menu-directive>
+
+    <div class="main-belief">
+
+    </div>
+
+    <div class="main-introduction">
+
+    </div>
+
+    <div class="main-resume">
+
+    </div>
+
+    <div class="main-skill">
+
+    </div>
+
+    <div class="main-portfolio">
+
+    </div>
+
+    <div class="main-contacts">
+
+    </div>
+
+
     <div class="main-footer">
-      <div class="main-connect-box">
-        <div class="main-connect kakao">
+      <div class="main-contact-box">
+        <div class="main-contact kakao">
           <img src="img/main/kakao.png" alt="kakao">
         </div>
-        <div class="main-connect mail">
+        <div class="main-contact mail">
           <img src="img/main/gmail.png" alt="gmail">
         </div>
-        <div class="main-connect git">
+        <div class="main-contact git">
           <div class="ion-social-github"></div>
         </div>
       </div>
-      <div class="main-title">
+      <div class="main-footer-title">
         <div>© 2016 Ver 1.0.0</div>
         <div>Park ji yeon All create.</div>
       </div>
