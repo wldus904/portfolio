@@ -1,5 +1,5 @@
 <ion-view view-title="메인" class="main-bg-img">
-  <ion-content class="main">
+  <ion-content class="main" on-scroll="scrollEvent()" delegate-handle="mainScroll">
     <!--<div class="main-my-self main-btn" ng-class="btnStyle" ng-click="goPage('introduction')">introduction</div>
     <div class="main-my-spec main-btn" ng-class="btnStyle" ng-click="goPage('spec')">spec</div>
     <div class="main-my-project main-btn" ng-class="btnStyle" ng-click="goPage('project')">project</div>
@@ -21,7 +21,7 @@
       </ion-slide>
     </ion-slide-box>
 
-    <menu-directive></menu-directive>
+    <div menu-directive class="main-menu-wrap"></div>
 
     <div class="main-belief">
 

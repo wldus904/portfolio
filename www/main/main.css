@@ -1,5 +1,5 @@
 
-body {
+html, body {
   height: 100%;
   width: 100%;
 }
@@ -116,14 +116,31 @@ body {
   size: cover;
 }
 
+.main-menu-wrap {
+  height: 7%;
+  width: 100%;
+  background-color: #669966;
+  border-bottom: 5px solid #507350;
+}
+
 .main-menu {
   width: 100%;
+  height: 100%;
+  background-color: #669966;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.main-menu-fixed {
   height: 7%;
+  width: 100%;
   background-color: #669966;
   border-bottom: 5px solid #507350;
   color: #fff;
   font-weight: bold;
   font-size: 1.2em;
+  position: fixed;
 }
 
 .main-belief {
@@ -132,7 +149,8 @@ body {
   background-color: #fff;
 }
 
-.main-menu table {
+.main-menu table,
+.main-menu-fixed table {
   width: 55%;
   margin: auto;
   position: relative;
