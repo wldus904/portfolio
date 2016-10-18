@@ -151,11 +151,31 @@ html, body {
 
 .main-menu table,
 .main-menu-fixed table {
-  width: 55%;
+  width: 60%;
   margin: auto;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.main-menu table .ion-arrow-down-b,
+.main-menu-fixed table .ion-arrow-down-b {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  color: #f9e5a2;
+  font-size: 1em;
+  height: .8em;
+  margin: 0 0 .5em 0;
+  position: relative;
+  top: 0;
+}
+
+.main-menu-default {
+  opacity: 0;
+}
+
+.main-menu-nav {
+  opacity: 1;
 }
 
 .main-introduction {

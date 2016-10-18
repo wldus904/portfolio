@@ -19,7 +19,7 @@ mainCtrl = function($scope, $state, $timeout) {
   }
 
   $scope.slideChanged = function(index) {
-    console.log("change : ", index);
+    // console.log("change : ", index);
   }
 }
 
