@@ -20,7 +20,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
     url: '/main',
     templateUrl: 'main/main.html',
     controller: 'mainCtrl'
-  });
+  })
+  .state('introduction', {
+    url: '/introduction',
+    templateUrl: 'introduction/introduction.html',
+    controller: 'introductionCtrl'
+  });;
 
 
 
