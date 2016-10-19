@@ -1,30 +1,30 @@
 menuDirective = function($ionicScrollDelegate, $window) {
   return{
     template : `
-      <div ng-class="menuClass" ng-style="menuStyle">
+      <div class="main-menu" ng-class="menuClass" ng-style="menuStyle">
         <table>
           <tr>
-            <td>
+            <td ng-click="clickMenu(mainSlideObj)">
               <div class="ion-arrow-down-b" ng-class="menuNav == 'home' ? 'main-menu-nav':'main-menu-default'"></div>
               HOME
             </td>
-            <td>
+            <td ng-click="clickMenu(mainBeliefObj)">
               <div class="ion-arrow-down-b" ng-class="menuNav == 'about' ? 'main-menu-nav':'main-menu-default'"></div>
               ABOUT
             </td>
-            <td>
+            <td ng-click="clickMenu(mainResumeObj)">
               <div class="ion-arrow-down-b" ng-class="menuNav == 'resume' ? 'main-menu-nav':'main-menu-default'"></div>
               RESUME
             </td>
-            <td>
+            <td ng-click="clickMenu(mainSkillObj)">
               <div class="ion-arrow-down-b" ng-class="menuNav == 'skills' ? 'main-menu-nav':'main-menu-default'"></div>
               SKILLS
             </td>
-            <td>
+            <td ng-click="clickMenu(mainPortfolioObj)">
               <div class="ion-arrow-down-b" ng-class="menuNav == 'portfolio' ? 'main-menu-nav':'main-menu-default'"></div>
               PORTFOLIO
             </td>
-            <td>
+            <td ng-click="clickMenu(mainContactsObj)">
               <div class="ion-arrow-down-b" ng-class="menuNav == 'contacts' ? 'main-menu-nav':'main-menu-default'"></div>
               CONTACTS
             </td>
@@ -33,82 +33,99 @@ menuDirective = function($ionicScrollDelegate, $window) {
       </div>
     `,
     link : function(scope, element, attrs) {
+      $ionicScrollDelegate.getScrollView().options.animationDuration = 1500;
+
       var htmlHalfHeight;
       var mainSlide = angular.element(document.querySelector('#main-slide'));
-      var mainSlideObj = {
+      scope.mainSlideObj = {
         standard : (mainSlide.prop('offsetTop') + mainSlide.prop('clientHeight')/3),
-        bottom : mainSlide.prop('offsetTop') + mainSlide.prop('clientHeight')
+        bottom : mainSlide.prop('offsetTop') + mainSlide.prop('clientHeight'),
+        top : mainSlide.prop('offsetTop')
       }
       var mainBelief = angular.element(document.querySelector('#main-belief'));
-      var mainBeliefObj = {
+      scope.mainBeliefObj = {
         standard : (mainBelief.prop('offsetTop') + mainBelief.prop('clientHeight')/3),
-        bottom : mainBelief.prop('offsetTop') + mainBelief.prop('clientHeight')
+        bottom : mainBelief.prop('offsetTop') + mainBelief.prop('clientHeight'),
+        top : mainBelief.prop('offsetTop')
       }
       var mainIntroduction = angular.element(document.querySelector('#main-introduction'));
-      var mainIntroductionObj = {
+      scope.mainIntroductionObj = {
         standard : (mainIntroduction.prop('offsetTop') + mainIntroduction.prop('clientHeight')/3),
-        bottom : mainIntroduction.prop('offsetTop') + mainIntroduction.prop('clientHeight')
+        bottom : mainIntroduction.prop('offsetTop') + mainIntroduction.prop('clientHeight'),
+        top : mainIntroduction.prop('offsetTop')
       }
       var mainResume = angular.element(document.querySelector('#main-resume'));
-      var mainResumeObj = {
+      scope.mainResumeObj = {
         standard : (mainResume.prop('offsetTop') + mainResume.prop('clientHeight')/3),
-        bottom : mainResume.prop('offsetTop') + mainResume.prop('clientHeight')
+        bottom : mainResume.prop('offsetTop') + mainResume.prop('clientHeight'),
+        top : mainResume.prop('offsetTop')
       }
       var mainSkill = angular.element(document.querySelector('#main-skill'));
-      var mainSkillObj = {
+      scope.mainSkillObj = {
         standard : (mainSkill.prop('offsetTop') + mainSkill.prop('clientHeight')/3),
-        bottom : mainSkill.prop('offsetTop') + mainSkill.prop('clientHeight')
+        bottom : mainSkill.prop('offsetTop') + mainSkill.prop('clientHeight'),
+        top : mainSkill.prop('offsetTop')
       }
       var mainPortfolio = angular.element(document.querySelector('#main-portfolio'));
-      var mainPortfolioObj = {
+      scope.mainPortfolioObj = {
         standard : (mainPortfolio.prop('offsetTop') + mainPortfolio.prop('clientHeight')/3),
-        bottom : mainPortfolio.prop('offsetTop') + mainPortfolio.prop('clientHeight')
+        bottom : mainPortfolio.prop('offsetTop') + mainPortfolio.prop('clientHeight'),
+        top : mainPortfolio.prop('offsetTop')
       }
       var mainContacts = angular.element(document.querySelector('#main-contacts'));
-      var mainContactsObj = {
+      scope.mainContactsObj = {
         standard : (mainContacts.prop('offsetTop') + mainContacts.prop('clientHeight')/3),
-        bottom : mainContacts.prop('offsetTop') + mainContacts.prop('clientHeight')
+        bottom : mainContacts.prop('offsetTop') + mainContacts.prop('clientHeight'),
+        top : mainContacts.prop('offsetTop')
       }
 
-      scope.menuClass = 'main-menu';
+      scope.menuClass = 'main-menu-none-fixed';
       scope.menuStyle = '';
       scope.menuNav = 'home';
 
       scope.scrollEvent = function() {
-        htmlHalfHeight = $ionicScrollDelegate.getScrollPosition().top + document.body.clientHeight/2;
+        htmlHalfHeight = $ionicScrollDelegate.getScrollPosition().top + document.body.offsetHeight/2;
 
         if($ionicScrollDelegate.getScrollPosition().top <= element.prop('offsetTop')) {
-          scope.menuClass = 'main-menu';
-          scope.menuStyle = '';
+          if(scope.menuClass != 'main-menu-none-fixed'){
+            scope.menuClass = 'main-menu-none-fixed';
+            scope.menuStyle = '';
+          }
         }else if($ionicScrollDelegate.getScrollPosition().top > element.prop('offsetTop')) {
-          scope.menuClass = 'main-menu-fixed';
+          if(scope.menuClass != 'main-menu-fixed'){
+            scope.menuClass = 'main-menu-fixed';
+          }
           scope.menuStyle = { top : $ionicScrollDelegate.getScrollPosition().top+'px' };
         }
 
-        if(htmlHalfHeight >= mainSlideObj.standard && htmlHalfHeight <= mainSlideObj.bottom) {
+        if(htmlHalfHeight >= scope.mainSlideObj.standard && htmlHalfHeight <= scope.mainSlideObj.bottom) {
           scope.menuNav = 'home';
         }
-        if(htmlHalfHeight >= mainBeliefObj.standard && htmlHalfHeight <= mainBeliefObj.bottom) {
+        if(htmlHalfHeight >= scope.mainBeliefObj.standard && htmlHalfHeight <= scope.mainBeliefObj.bottom) {
           scope.menuNav = 'about';
         }
-        if(htmlHalfHeight >= mainIntroductionObj.standard && htmlHalfHeight <= mainIntroductionObj.bottom) {
+        if(htmlHalfHeight >= scope.mainIntroductionObj.standard && htmlHalfHeight <= scope.mainIntroductionObj.bottom) {
           scope.menuNav = 'about';
         }
-        if(htmlHalfHeight >= mainResumeObj.standard && htmlHalfHeight <= mainResumeObj.bottom) {
+        if(htmlHalfHeight >= scope.mainResumeObj.standard && htmlHalfHeight <= scope.mainResumeObj.bottom) {
           scope.menuNav = 'resume';
         }
-        if(htmlHalfHeight >= mainSkillObj.standard && htmlHalfHeight <= mainSkillObj.bottom) {
+        if(htmlHalfHeight >= scope.mainSkillObj.standard && htmlHalfHeight <= scope.mainSkillObj.bottom) {
           scope.menuNav = 'skills';
         }
-        if(htmlHalfHeight >= mainPortfolioObj.standard && htmlHalfHeight <= mainPortfolioObj.bottom) {
+        if(htmlHalfHeight >= scope.mainPortfolioObj.standard && htmlHalfHeight <= scope.mainPortfolioObj.bottom) {
           scope.menuNav = 'portfolio';
         }
-        if(htmlHalfHeight >= mainContactsObj.standard && htmlHalfHeight <= mainContactsObj.bottom) {
+        if(htmlHalfHeight >= scope.mainContactsObj.standard && htmlHalfHeight <= scope.mainContactsObj.bottom) {
           scope.menuNav = 'contacts';
         }
 
         scope.$apply();
 
+      }
+
+      scope.clickMenu = function(menu) {
+        $ionicScrollDelegate.scrollTo(0, menu.top, true);
       }
     }
   }
