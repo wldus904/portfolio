@@ -1,25 +1,19 @@
 mainCtrl = function($scope, $state, $timeout) {
-  $scope.btnStyle="no-active-main-btn";
-  $scope.currentPage = {
-    page: "",
-    url: ""
-  };
-
-  $scope.goPage = function(page) {
-    if(page == $scope.currentPage.page) {
-      $scope.btnStyle = "no-active-main-btn";
-      $scope.currentPage.page = "";
-      $scope.currentPage.url = "";
-      $scope.ctrl = "";
-    }else{
-      $scope.btnStyle = "active-main-btn";
-      $scope.currentPage.page = page;
-      $scope.currentPage.url = page+"/"+page+".html";
-    }
-  }
+  $scope.introductionStyle = {opacity: '0', position: 'relative', right: '-10em'};
 
   $scope.slideChanged = function(index) {
     // console.log("change : ", index);
+  }
+
+  $scope.changeStyle = function(menu) {
+    switch(menu) {
+      case 'home': break;
+      case 'about': $scope.introductionStyle = {opacity: '1', position: 'relative', right: '0', transition: 'all 1s'}; break;
+      case 'resume': break;
+      case 'skills': break;
+      case 'portfolio': break;
+      case 'contacts': break;
+    }
   }
 }
 

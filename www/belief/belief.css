@@ -1,0 +1,18 @@
+.belief {
+  height: 100%;
+  width: 100%;
+  top: 30%;
+  transform: translateY(15%);
+}
+
+.belief-status {
+  color: #6d929b;
+  font-weight: bold;
+  animation-name: belief;
+  animation-duration: 2s;
+}
+
+@keyframes belief {
+  from {opacity: 0;}
+    to {opacity: 1;}
+}

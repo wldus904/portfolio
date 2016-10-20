@@ -1,37 +1,73 @@
 .introduction {
-  text-align: center;
-}
-
-.introduction-bg-img {
-  background-color: rgba( 0, 0, 0, 0 );
-}
-
-.introduction .scroll {
-  height: 100%;
   width: 100%;
+  height: 100%;
+  padding: 5em 3em;
+  color: #fff;
+  animation-name: introduction;
+  animation-duration: 2s;
 }
 
-.introduction .introduction-info {
-  position: relative;
-  display: inline-block;
-  width: 50%;
-  height: 30%;
-  top: 30%;
-  transform: translateY(-20%);
+@keyframes introduction {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
-.introduction .introduction-info img {
-  height: 70%;
-  display: block;
-  margin: auto;
-  border: 1px solid green;
+.introduction-header {
+  width: 100%;
+  height: 15%;
+  text-align: left;
+  border-left: .5em solid #fff;
+  padding: 0 0 0 1.5em;
 }
 
-.introduction div {
-  margin: .3em;
+.introduction-header-Nickname {
   font-weight: bold;
+  font-size: 4em;
+  height: 70%;
+  line-height: 1em;
 }
 
-.introduction .introduction-status {
-  color: #A4A4A4;
+.introduction-header-word {
+  font-size: 2em;
+  height: 30%;
+}
+
+.introduction-content {
+  width: 100%;
+  height: 80%;
+  margin: 1.5em 0 0 0;
+  font-size: 1.4em;
+}
+
+.introduction-content table {
+  width: 100%;
+  height: 100%;
+}
+
+.introduction-content table tr {
+  width: 100%;
+  height: 25%;
+}
+
+.introduction-content table td {
+  width: 25%;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.introduction-content table img {
+  width: 20em;
+  height: 100%;
+  margin: 0 2em 0 0;
+  border: .5em solid #9eb84e;
+  border-radius: .5em;
+  font-size: .8em;
+  position: relative;
+  animation-name: introductionImg;
+  animation-duration: 2s;
+}
+
+@keyframes introductionImg {
+  from {left: -25em;}
+  to {left: 0em;}
 }

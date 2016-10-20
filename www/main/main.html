@@ -1,10 +1,5 @@
-<ion-view view-title="메인" class="main-bg-img">
+<ion-view view-title="메인">
   <ion-content class="main" on-scroll="scrollEvent()" delegate-handle="mainScroll">
-    <!--<div class="main-my-self main-btn" ng-class="btnStyle" ng-click="goPage('introduction')">introduction</div>
-    <div class="main-my-spec main-btn" ng-class="btnStyle" ng-click="goPage('spec')">spec</div>
-    <div class="main-my-project main-btn" ng-class="btnStyle" ng-click="goPage('project')">project</div>
-    <div class="main-my-contact main-btn" ng-class="btnStyle" ng-click="goPage('contact')">contact</div>
-    <div ng-include="currentPage.url" class="main-view"></div>-->
 
     <ion-slide-box id="main-slide" does-continue = "true" auto-play = 'true' slide-interval = '4000' on-slide-changed="slideChanged(index)">
       <ion-slide>
@@ -21,11 +16,11 @@
     <div menu-directive class="main-menu-wrap"></div>
 
     <div id="main-belief" class="main-belief">
-
+      <belief-directive class="main-directive"></belief-directive>
     </div>
 
     <div id="main-introduction" class="main-introduction">
-
+      <introduction-directive class="main-directive"></introduction-directive>
     </div>
 
     <div id="main-resume" class="main-resume">

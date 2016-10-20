@@ -99,25 +99,46 @@ menuDirective = function($ionicScrollDelegate, $window) {
         }
 
         if(htmlHalfHeight >= scope.mainSlideObj.standard && htmlHalfHeight <= scope.mainSlideObj.bottom) {
-          scope.menuNav = 'home';
+          if(scope.menuNav != 'home') {
+            scope.menuNav = 'home';
+            scope.changeStyle('home');
+          }
         }
         if(htmlHalfHeight >= scope.mainBeliefObj.standard && htmlHalfHeight <= scope.mainBeliefObj.bottom) {
-          scope.menuNav = 'about';
+          if(scope.menuNav != 'about') {
+            scope.menuNav = 'about';
+            scope.changeStyle('about');
+          }
         }
         if(htmlHalfHeight >= scope.mainIntroductionObj.standard && htmlHalfHeight <= scope.mainIntroductionObj.bottom) {
-          scope.menuNav = 'about';
+          if(scope.menuNav != 'about') {
+            scope.menuNav = 'about';
+            scope.changeStyle('about');
+          }
         }
         if(htmlHalfHeight >= scope.mainResumeObj.standard && htmlHalfHeight <= scope.mainResumeObj.bottom) {
-          scope.menuNav = 'resume';
+          if(scope.menuNav != 'resume') {
+            scope.menuNav = 'resume';
+            scope.changeStyle('resume');
+          }
         }
         if(htmlHalfHeight >= scope.mainSkillObj.standard && htmlHalfHeight <= scope.mainSkillObj.bottom) {
-          scope.menuNav = 'skills';
+          if(scope.menuNav != 'skills') {
+            scope.menuNav = 'skills';
+            scope.changeStyle('skills');
+          }
         }
         if(htmlHalfHeight >= scope.mainPortfolioObj.standard && htmlHalfHeight <= scope.mainPortfolioObj.bottom) {
-          scope.menuNav = 'portfolio';
+          if(scope.menuNav != 'portfolio') {
+            scope.menuNav = 'portfolio';
+            scope.changeStyle('portfolio');
+          }
         }
         if(htmlHalfHeight >= scope.mainContactsObj.standard && htmlHalfHeight <= scope.mainContactsObj.bottom) {
-          scope.menuNav = 'contacts';
+          if(scope.menuNav != 'contacts') {
+            scope.menuNav = 'contacts';
+            scope.changeStyle('contacts');
+          }
         }
 
         scope.$apply();

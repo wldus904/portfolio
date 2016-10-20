@@ -1,5 +1,10 @@
-introductionCtrl = function($scope, $state) {
+introductionDirective = function() {
+  return {
+    templateUrl : 'introduction/introduction.html',
+    controller: function($scope) {
 
+    }
+  }
 }
 
-app.controller('introductionCtrl', introductionCtrl);
+app.directive('introductionDirective', introductionDirective);
