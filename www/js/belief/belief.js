@@ -1,6 +1,6 @@
 beliefDirective = function() {
   return {
-    templateUrl : 'belief/belief.html',
+    templateUrl : 'templates/belief/belief.html',
     controller: function($scope) {
 
     }

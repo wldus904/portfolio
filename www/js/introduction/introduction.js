@@ -1,6 +1,6 @@
 introductionDirective = function() {
   return {
-    templateUrl : 'introduction/introduction.html',
+    templateUrl : 'templates/introduction/introduction.html',
     controller: function($scope) {
     }
   }
