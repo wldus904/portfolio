@@ -64,7 +64,7 @@ menuDirective = function($ionicScrollDelegate, $window) {
       scope.mainSkillObj = {
         standard : (mainSkill.prop('offsetTop') + mainSkill.prop('clientHeight')/3),
         bottom : mainSkill.prop('offsetTop') + mainSkill.prop('clientHeight'),
-        top : mainSkill.prop('offsetTop')
+        top : (mainSkill.prop('offsetTop') - mainSkill.prop('clientHeight')/3)
       }
       var mainPortfolio = angular.element(document.querySelector('#main-portfolio'));
       scope.mainPortfolioObj = {
@@ -74,9 +74,9 @@ menuDirective = function($ionicScrollDelegate, $window) {
       }
       var mainContacts = angular.element(document.querySelector('#main-contacts'));
       scope.mainContactsObj = {
-        standard : (mainContacts.prop('offsetTop') + mainContacts.prop('clientHeight')/3),
+        standard : (mainContacts.prop('offsetTop') - mainContacts.prop('clientHeight')/5),
         bottom : mainContacts.prop('offsetTop') + mainContacts.prop('clientHeight'),
-        top : mainContacts.prop('offsetTop')
+        top : (mainContacts.prop('offsetTop') - mainContacts.prop('clientHeight')/5)
       }
 
       scope.menuClass = 'main-menu-none-fixed';
